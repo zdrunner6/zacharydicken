@@ -118,7 +118,7 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(180deg, rgba(10,15,13,0.4) 0%, rgba(10,15,13,0.5) 35%, rgba(10,15,13,0.65) 50%, rgba(10,15,13,0.55) 65%, rgba(10,15,13,0.85) 80%, var(--bg-deep) 100%),
+      linear-gradient(180deg, rgba(10,15,13,0.4) 0%, rgba(10,15,13,0.5) 35%, rgba(10,15,13,0.65) 50%, rgba(10,15,13,0.85) 80%, var(--bg-deep) 100%),
       url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80') center/cover no-repeat;
     transform: scale(1.05);
     animation: heroZoom 25s ease-in-out infinite alternate;
@@ -136,7 +136,7 @@
     max-width: 860px;
     padding: 0 2rem;
     animation: fadeUp 1.2s ease-out 0.3s both;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5), 0 2px 12px rgba(0,0,0,0.4);
   }
 
   @keyframes fadeUp {
@@ -165,7 +165,8 @@
 
   .hero-sub {
     font-size: 1.05rem;
-    color: var(--text-secondary);
+    font-weight: 400;
+    color: var(--text-primary);
     max-width: 520px;
     margin: 0 auto 3rem;
     line-height: 1.8;
@@ -519,6 +520,7 @@
   }
 
   .edu-pair {
+    position: relative;
     display: flex;
     gap: 1.25rem;
     align-items: stretch;
@@ -529,13 +531,23 @@
   }
 
   .edu-pair .edu-card.edu-popout {
-    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s;
-    transform: translateX(0);
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 240px;
+    margin-left: 1.25rem;
+    opacity: 0;
+    transform: translateX(-60px) scale(0.85);
+    pointer-events: none;
+    z-index: 10;
+    transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .edu-pair:hover .edu-card.edu-popout {
-    transform: translateX(12px) translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+    box-shadow: 0 20px 56px rgba(0,0,0,0.5);
     border-color: var(--accent);
   }
 
@@ -676,9 +688,21 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.15rem;
     font-weight: 500;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     padding-bottom: 0.65rem;
     border-bottom: 1px solid var(--border);
+  }
+
+  .race-subsection {
+    margin-bottom: 1.5rem;
+  }
+
+  .race-subsection-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
   }
 
   .race-entry {
@@ -839,8 +863,7 @@
     .race-columns { grid-template-columns: 1fr; }
     .awards-grid { grid-template-columns: 1fr; }
     .education-grid { grid-template-columns: 1fr; }
-    .edu-pair { flex-direction: column; }
-    .edu-pair:hover .edu-card.edu-popout { transform: translateY(-4px); }
+    .edu-pair .edu-card.edu-popout { position: relative; left: 0; margin-left: 0; width: 100%; }
     .ventures-grid { grid-template-columns: 1fr; }
     .community-items { grid-template-columns: 1fr; }
     .manifesto-card { padding: 2rem; }
@@ -870,7 +893,7 @@
   <div class="hero-content">
     <div class="hero-eyebrow">Strategy · Endurance · Purpose</div>
     <h1>Zachary <em>Dicken</em></h1>
-    <p class="hero-sub">Executive. Ultramarathoner. Entrepreneur. Dad. High-agency operator.<br>Playing the infinite game — on my own terms.</p>
+    <p class="hero-sub">Executive. Ultramarathoner. Entrepreneur. Dad.<br>Playing the infinite game — on my own terms.</p>
     <div class="hero-worlds">
       <a href="#professional" class="world-pill">Professional</a>
       <a href="#ventures" class="world-pill">Wash Park Ventures</a>
@@ -949,8 +972,8 @@
 
     <div class="bio-grid reveal">
       <div class="bio-text">
-        <p>I'm a high-agency operator — an executive focused on strategy and business development, with 15+ years leading revenue growth and operational efficiency across the sports and tech industries. I'm motivated by solving problems, building strong teams, and driving strategic decisions that move business forward.</p>
-        <p>My career has given me opportunities to lead large, dynamic cross-functional teams in both mid-sized companies and Fortune 500 environments. I navigate high-stakes situations while creating clarity, setting culture and pace, and driving results at scale.</p>
+        <p>I'm an executive focused on strategy and business development, with 15+ years leading revenue growth and operational efficiency across the sports and tech industries. I'm motivated by solving problems, building strong teams, and driving strategic decisions that move business forward.</p>
+        <p>My career has given me opportunities to lead large cross-functional teams in both mid-sized companies and Fortune 500 environments, navigating dynamic, high-stakes situations while creating clarity and setting culture and pace.</p>
         <p>Outside of work, I'm an ultrarunner and entrepreneur, drawn to setting big goals and learning from the pursuit. I'm focused on evolving as a person and leader and showing up consistently as a dad, husband, and friend.</p>
       </div>
       <div class="bio-stats">
@@ -992,12 +1015,12 @@
         <div class="timeline-date">2023 — Present</div>
         <div class="timeline-role">Vice President, Partner Services, Operations & Supply Strategy</div>
         <div class="timeline-company">Ticketmaster · Live Nation Entertainment</div>
-        <div class="timeline-desc">Leading the Resale Supply Chain — a large, dynamic performance-based team comprised of several groups working together to drive resale forward at scale. Focus: grow and optimize supply; build and enhance tools & services; remove friction across the ecosystem; foster trusted partnerships; drive operational excellence; power cross-functional initiatives; champion transparent, compliant communication and policies.</div>
-        <div class="timeline-desc" style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--text-muted);">Spanning Tooling (Sales, Programs), Operations (BOS, 3PE, Client, Events), Support (APIs, Tooling, Open Ticketing, Salesforce), Partner Services (BizDev & Relationship Strategy), and Communications (Partner Program, Global). Supply strategy represents ~50% of resale GTV and ~70% of marketplace inventory. Record performance across major metrics. Scaled 3PE from zero to an XXX+ vertical. Key role in "Sell Instantly" — XXX in ticket sales, 150% YoY growth.</div>
+        <div class="timeline-desc">Leading the Resale Supply Chain — a large, dynamic performance-based team comprised of several groups working together to drive resale forward at scale.</div>
+        <div class="timeline-desc" style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--text-muted);">Spanning Tooling (Sales, Programs), Operations (BOS, 3PE, Client, Events), Support (APIs, Tooling, Open Ticketing, Salesforce), Partner Services (BizDev &amp; Relationship Strategy), and Communications (Partner Program, Global). Supply strategy represents ~50% of resale GTV and ~70% of marketplace inventory. Scaled 3PE from zero to a $XXX+ vertical. Key role in "Sell Instantly" — $XXX in ticket sales, 150% YoY growth.</div>
         <div class="timeline-badges">
-          <span class="badge">Supply Record '19, '22, '23, '24</span>
-          <span class="badge">XXX+ Vertical</span>
-          <span class="badge">XXX Fan Program</span>
+          <span class="badge">Supply Record '19, '22, '23, '24, '25</span>
+          <span class="badge">$XXX+ Vertical</span>
+          <span class="badge">$XXX Fan Program</span>
         </div>
       </div>
 
@@ -1005,14 +1028,14 @@
         <div class="timeline-date">2021 — 2023</div>
         <div class="timeline-role">Senior Director, Partner Services & Supply Strategy</div>
         <div class="timeline-company">Ticketmaster</div>
-        <div class="timeline-desc">Navigated the resale supply vertical through COVID and back to scale. XXX barcodes and XXX GTV — 2x revenue vs. pre-COVID levels. Grew the Partner Program to 1,500+ sellers. Launched Open Ticketing Resale Validation for MLB.</div>
+        <div class="timeline-desc">Navigated the resale supply vertical through COVID and back to scale. XXX barcodes and $XXX GTV — 2x revenue vs. pre-COVID levels. Grew the Partner Program to 1,500+ sellers. Launched Open Ticketing Resale Validation for MLB.</div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-date">2019 — 2021</div>
         <div class="timeline-role">Director of Supply Strategy</div>
         <div class="timeline-company">Ticketmaster</div>
-        <div class="timeline-desc">Joined as IC, quickly became thought leader. Managed top 100 resellers. Saved XXX by revising clawback processes during COVID and recovered XXX in sales collections. Pioneered 15 pivotal NFL deals capturing over half of Ticketmaster's NFL supply.</div>
+        <div class="timeline-desc">Joined as IC, quickly became thought leader. Managed top 100 resellers. Saved $XXX by revising clawback processes during COVID and recovered $XXX in sales collections. Pioneered 15 pivotal NFL deals capturing over half of Ticketmaster's NFL supply.</div>
       </div>
 
       <div class="timeline-item">
@@ -1080,7 +1103,7 @@
     <div class="awards-grid reveal">
       <div class="award-group">
         <h3>Leadership & Management</h3>
-        <div class="award-item"><span class="award-name">Ticketmaster Resale Supply Record</span><span class="award-year">'19, '22, '23, '24</span></div>
+        <div class="award-item"><span class="award-name">Ticketmaster Resale Supply Record</span><span class="award-year">'19, '22, '23, '24, '25</span></div>
         <div class="award-item"><span class="award-name">MLS Commissioner's Award — ST Renewals</span><span class="award-year">2018</span></div>
         <div class="award-item"><span class="award-name">MLS Ticket Sales Team of the Year Finalist</span><span class="award-year">2017</span></div>
         <div class="award-item"><span class="award-name">MLS Ticket Sales Impact Award — Outside Sales</span><span class="award-year">2017</span></div>
@@ -1090,8 +1113,10 @@
       </div>
       <div class="award-group">
         <h3>Individual</h3>
-        <div class="award-item"><span class="award-name">1st Overall Male — Shawnee Hills 100K (Course Record)</span><span class="award-year">2025</span></div>
-        <div class="award-item"><span class="award-name">1st Overall Male — Cry Me A River 50K</span><span class="award-year">2025</span></div>
+        <div class="award-item"><span class="award-name">1st OA — Shawnee Hills 100K (Course Record)</span><span class="award-year">2025</span></div>
+        <div class="award-item"><span class="award-name">1st OA — Cry Me A River 50K</span><span class="award-year">2025</span></div>
+        <div class="award-item"><span class="award-name">1st OA — Cry Me A River 50K</span><span class="award-year">2024</span></div>
+        <div class="award-item"><span class="award-name">3rd OA — Cry Me A River 50K</span><span class="award-year">2023</span></div>
         <div class="award-item"><span class="award-name">1st Overall Male — Shawnee Hills 50K</span><span class="award-year">2024</span></div>
         <div class="award-item"><span class="award-name">MLS Ticketing Exec of the Year Finalist</span><span class="award-year">2017</span></div>
         <div class="award-item"><span class="award-name">MLS All-Sales Team — Season Tickets</span><span class="award-year">2012</span></div>
@@ -1119,7 +1144,7 @@
 
     <div class="ventures-grid reveal">
       <div class="venture-card">
-        <span class="venture-icon">◆</span>
+        <span class="venture-icon">🌳</span>
         <div class="venture-name">Wash Park Ventures</div>
         <div class="venture-role">Founder</div>
         <div class="venture-desc">Entrepreneurial venture focused on building wealth through value creation at scale. Solving big, meaningful problems while maintaining full control over time and priorities.</div>
@@ -1130,7 +1155,7 @@
         <div class="venture-name">The Running Tree</div>
         <div class="venture-role">Founder · 2015 — Present</div>
         <div class="venture-desc">Born from the trails — a venture rooted in the running and endurance community. Connecting the culture of distance running with purpose-driven commerce.</div>
-        <span class="venture-status status-active">Active</span>
+        <span class="venture-status status-active">2015</span>
       </div>
     </div>
   </div>
@@ -1153,117 +1178,165 @@
       <div class="race-column">
         <h3>Ultramarathons</h3>
 
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Potawatomi Trail Runs — 60 Miler</div>
-            <div class="race-location">Pekin, IL</div>
+        <div class="race-subsection">
+          <div class="race-subsection-title">50K</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Cry Me A River — 50K</div>
+              <div class="race-location">Peoria, IL</div>
+              <div class="race-highlight">1st Place Overall Male</div>
+            </div>
+            <div class="race-meta"><div class="race-year">2025</div></div>
           </div>
-          <div class="race-meta"><div class="race-year">2028</div></div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Cry Me A River — 50K</div>
-            <div class="race-location">Grafton, IL</div>
-            <div class="race-highlight">1st Place Overall Male</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Cry Me A River — 50K</div>
+              <div class="race-location">Peoria, IL</div>
+              <div class="race-highlight">1st OA</div>
+            </div>
+            <div class="race-meta"><div class="race-year">2024</div></div>
           </div>
-          <div class="race-meta"><div class="race-year">2025</div></div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Cry Me A River — 50K</div>
-            <div class="race-location">Grafton, IL</div>
-          </div>
-          <div class="race-meta"><div class="race-year">2024</div></div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Shawnee Hills Trail Races — 100K</div>
-            <div class="race-location">Ozark, IL</div>
-            <div class="race-highlight">1st Overall · New Course Record</div>
-          </div>
-          <div class="race-meta">
-            <div class="race-time">12:40:56</div>
-            <div class="race-year">2025</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Cry Me A River — 50K</div>
+              <div class="race-location">Peoria, IL</div>
+              <div class="race-highlight">3rd OA</div>
+            </div>
+            <div class="race-meta"><div class="race-year">2023</div></div>
           </div>
         </div>
 
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Pinhoti 100 — 100 Miler</div>
-            <div class="race-location">Sylacauga, AL</div>
+        <div class="race-subsection">
+          <div class="race-subsection-title">50 Miler</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Shawnee Hills — 69K</div>
+              <div class="race-location">Ozark, IL</div>
+              <div class="race-highlight">1st Place Overall Male</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">6:52:47</div>
+              <div class="race-year">2024</div>
+            </div>
           </div>
-          <div class="race-meta">
-            <div class="race-time">21:27:18</div>
-            <div class="race-year">2024</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Potawatomi Trail Runs — 60 Miler</div>
+              <div class="race-location">Pekin, IL</div>
+            </div>
+            <div class="race-meta"><div class="race-year">2028</div></div>
           </div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Shawnee Hills — 69K</div>
-            <div class="race-location">Ozark, IL</div>
-            <div class="race-highlight">1st Place Overall Male</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">North Face Challenge — 60 Miler</div>
+              <div class="race-location">Park City, UT</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">12:03:27</div>
+              <div class="race-year">2018</div>
+            </div>
           </div>
-          <div class="race-meta">
-            <div class="race-time">6:52:47</div>
-            <div class="race-year">2024</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">North Face Challenge — 60 Miler</div>
+              <div class="race-location">Blue Mountain, ON</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">9:28:38</div>
+              <div class="race-year">2018</div>
+            </div>
           </div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Grindstone by UTMB — 100K</div>
-            <div class="race-location">Swoope, VA</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">North Face Challenge — 60 Miler</div>
+              <div class="race-location">San Francisco, CA</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">10:08:16</div>
+              <div class="race-year">2016</div>
+            </div>
           </div>
-          <div class="race-meta">
-            <div class="race-time">18:38:16</div>
-            <div class="race-year">2023</div>
-          </div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Zion Ultras — 100K</div>
-            <div class="race-location">Apple Valley, UT</div>
-            <div class="race-highlight">Top 10 Finisher</div>
-          </div>
-          <div class="race-meta"><div class="race-year">2020</div></div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Moab 240 Endurance Run</div>
-            <div class="race-location">Moab, UT · 240 Miles</div>
-            <div class="race-highlight">Top 30 · 85 hours through the desert</div>
-          </div>
-          <div class="race-meta">
-            <div class="race-time">85:25:38</div>
-            <div class="race-year">2018</div>
-          </div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Bryce Canyon Ultras — 100 Miler</div>
-            <div class="race-location">Bryce Canyon, UT</div>
-          </div>
-          <div class="race-meta">
-            <div class="race-time">28:11:32</div>
-            <div class="race-year">2017</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Grand Canyon Ultras — 60 Miler</div>
+              <div class="race-location">Grand Canyon, AZ</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">10:27:14</div>
+              <div class="race-year">2017</div>
+            </div>
           </div>
         </div>
 
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Grand Canyon Ultras — 60 Miler</div>
-            <div class="race-location">Grand Canyon, AZ</div>
+        <div class="race-subsection">
+          <div class="race-subsection-title">100K</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Shawnee Hills Trail Races — 100K</div>
+              <div class="race-location">Ozark, IL</div>
+              <div class="race-highlight">1st Overall · New Course Record</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">12:40:56</div>
+              <div class="race-year">2025</div>
+            </div>
           </div>
-          <div class="race-meta">
-            <div class="race-time">10:27:14</div>
-            <div class="race-year">2017</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Grindstone by UTMB — 100K</div>
+              <div class="race-location">Swoope, VA</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">18:38:16</div>
+              <div class="race-year">2023</div>
+            </div>
+          </div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Zion Ultras — 100K</div>
+              <div class="race-location">Apple Valley, UT</div>
+              <div class="race-highlight">Top 10 Finisher</div>
+            </div>
+            <div class="race-meta"><div class="race-year">2020</div></div>
+          </div>
+        </div>
+
+        <div class="race-subsection">
+          <div class="race-subsection-title">100 Miler</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Pinhoti 100 — 100 Miler</div>
+              <div class="race-location">Sylacauga, AL</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">21:27:18</div>
+              <div class="race-year">2024</div>
+            </div>
+          </div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Bryce Canyon Ultras — 100 Miler</div>
+              <div class="race-location">Bryce Canyon, UT</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">28:11:32</div>
+              <div class="race-year">2017</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="race-subsection">
+          <div class="race-subsection-title">200+ Milers</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Moab 240 Endurance Run</div>
+              <div class="race-location">Moab, UT · 240 Miles</div>
+              <div class="race-highlight">Top 30 · 85 hours through the desert</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">85:25:38</div>
+              <div class="race-year">2018</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1271,78 +1344,63 @@
       <div class="race-column">
         <h3>Marathons, Triathlon & Other</h3>
 
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Berryman Trail Races — Marathon</div>
-            <div class="race-location">Potosi, MO</div>
+        <div class="race-subsection">
+          <div class="race-subsection-title">Marathons</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Chicago Marathon</div>
+              <div class="race-location">Chicago, IL</div>
+            </div>
+            <div class="race-meta"><div class="race-year">×9</div></div>
           </div>
-          <div class="race-meta">
-            <div class="race-time">4:18:13</div>
-            <div class="race-year">2024</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Illinois Marathon</div>
+              <div class="race-location">Champaign, IL</div>
+            </div>
+            <div class="race-meta"><div class="race-year">×2</div></div>
           </div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">North Face Challenge — 60 Miler</div>
-            <div class="race-location">Park City, UT</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Berryman Trail Races — Marathon</div>
+              <div class="race-location">Potosi, MO</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">4:18:13</div>
+              <div class="race-year">2024</div>
+            </div>
           </div>
-          <div class="race-meta">
-            <div class="race-time">12:03:27</div>
-            <div class="race-year">2018</div>
-          </div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">North Face Challenge — 60 Miler</div>
-            <div class="race-location">Blue Mountain, ON</div>
-          </div>
-          <div class="race-meta">
-            <div class="race-time">9:28:38</div>
-            <div class="race-year">2018</div>
-          </div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">North Face Challenge — Marathon</div>
-            <div class="race-location">Eagle, WI</div>
-          </div>
-          <div class="race-meta">
-            <div class="race-time">4:56:54</div>
-            <div class="race-year">2017</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">North Face Challenge — Marathon</div>
+              <div class="race-location">Eagle, WI</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">4:56:54</div>
+              <div class="race-year">2017</div>
+            </div>
           </div>
         </div>
 
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Ironman Maryland</div>
-            <div class="race-location">Full Distance Triathlon</div>
-            <div class="race-highlight">Ironman Finisher</div>
+        <div class="race-subsection">
+          <div class="race-subsection-title">Triathlon & Other</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Ironman Maryland</div>
+              <div class="race-location">Full Distance Triathlon</div>
+              <div class="race-highlight">Ironman Finisher</div>
+            </div>
+            <div class="race-meta"><div class="race-year">2017</div></div>
           </div>
-          <div class="race-meta"><div class="race-year">2017</div></div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">North Face Challenge — 60 Miler</div>
-            <div class="race-location">San Francisco, CA</div>
-          </div>
-          <div class="race-meta">
-            <div class="race-time">10:08:16</div>
-            <div class="race-year">2016</div>
-          </div>
-        </div>
-
-        <div class="race-entry">
-          <div>
-            <div class="race-name">Pere Marquette Trail Run — 7.5 Mi</div>
-            <div class="race-location">Grafton, IL</div>
-          </div>
-          <div class="race-meta">
-            <div class="race-time">1:05:28</div>
-            <div class="race-year">2018</div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Pere Marquette Trail Run — 7.5 Mi</div>
+              <div class="race-location">Grafton, IL</div>
+            </div>
+            <div class="race-meta">
+              <div class="race-time">1:05:28</div>
+              <div class="race-year">2018</div>
+            </div>
           </div>
         </div>
       </div>
