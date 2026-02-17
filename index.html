@@ -818,6 +818,18 @@
     text-transform: uppercase;
   }
 
+  .race-upcoming > div:first-child {
+    border-left: 2px solid rgba(163, 196, 168, 0.5);
+    padding-left: 0.75rem;
+    margin-left: -0.25rem;
+  }
+
+  .race-upcoming .race-highlight {
+    color: var(--accent);
+    border-color: rgba(163, 196, 168, 0.4);
+    background: rgba(163, 196, 168, 0.08);
+  }
+
   /* ── Awards ── */
   .awards-grid {
     display: grid;
@@ -1210,7 +1222,7 @@
         <div class="timeline-date">2010 — 2019</div>
         <div class="timeline-role">Inside Sales Rep → Senior Director (9 promotions)</div>
         <div class="timeline-company">Chicago Fire Soccer Club · MLS</div>
-        <div class="timeline-desc">Nearly a decade rising from entry-level to senior leadership across ticketing, operations, and business intelligence. Led 35+ professionals across six departments. Founded the BI team. Organized the 2017 MLS All-Star Game at Soldier Field. Represented the club in München for the Bayern Munich friendly. Fastest promotion from Inside Sales in program history.</div>
+        <div class="timeline-desc">Nearly a decade rising from entry-level to senior leadership across ticketing, operations, and business intelligence. Led 35+ professionals across six departments. Founded the BI team. Effectively oversaw all club revenue channels — direct ownership of some, indirect influence on others (e.g., corporate) through BI-driven data, deal curation, and closing support — demonstrating full depth across the business. Organized the 2017 MLS All-Star Game at Soldier Field. Represented the club in München for the Bayern Munich friendly. Fastest promotion from Inside Sales in program history.</div>
         <div class="timeline-badges">
           <span class="badge">MLS Commissioner's Award ×3</span>
           <span class="badge">J.D. Power Best Fan Experience</span>
@@ -1307,7 +1319,7 @@
         <span class="venture-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L16 10L12 18L8 10Z"/></svg></span>
         <div class="venture-name">Wash Park Ventures</div>
         <div class="venture-role">Founder</div>
-        <div class="venture-desc">Entrepreneurial venture focused on building wealth through value creation at scale. Solving big, meaningful problems while maintaining full control over time and priorities.</div>
+        <div class="venture-desc">A long-term value holding company in the spirit of Berkshire Hathaway — patient capital, compound growth, and durable impact. We operate as an incubator: creating new ideas, driving them into companies, and building additive value through ownership and operational improvement rather than quick exits.</div>
         <span class="venture-status status-building">Building</span>
       </div>
       <div class="venture-card" id="running-tree">
@@ -1339,72 +1351,33 @@
         <h3>Ultramarathons</h3>
 
         <div class="race-subsection">
-          <div class="race-subsection-title">50K</div>
+          <div class="race-subsection-title">200+ Milers</div>
           <div class="race-entry">
             <div>
-              <div class="race-name">Cry Me A River</div>
-              <div class="race-location">Peoria, IL</div>
-              <div class="race-progression">
-                <span class="prog-count">×3</span>
-                <span class="prog-item">2023: <span class="prog-result">3rd OA</span></span>
-                <span class="prog-item">2024: <span class="prog-result">1st OA</span></span>
-                <span class="prog-item">2025: <span class="prog-result">1st Place Overall</span></span>
-              </div>
+              <div class="race-name">Moab 240 Endurance Run</div>
+              <div class="race-location">Moab, UT · 240 Miles</div>
+              <div class="race-highlight">29th Place OA · 85:25:36 · 85 hours through the desert</div>
             </div>
-          </div>
-          <div class="race-entry">
-            <div>
-              <div class="race-name">Shawnee Hills</div>
-              <div class="race-location">Ozark, IL</div>
-              <div class="race-progression">
-                <span class="prog-count">×2</span>
-                <span class="prog-item">2023: <span class="prog-result">2nd Place</span></span>
-                <span class="prog-item">2024: <span class="prog-result">2nd Place</span></span>
-              </div>
-            </div>
+            <div class="race-meta"><div class="race-year">2018</div></div>
           </div>
         </div>
 
         <div class="race-subsection">
-          <div class="race-subsection-title">50 Miler</div>
+          <div class="race-subsection-title">100 Miler</div>
           <div class="race-entry">
             <div>
-              <div class="race-name">Shawnee Hills</div>
-              <div class="race-location">Ozark, IL</div>
-              <div class="race-highlight">1st Place Overall Male</div>
+              <div class="race-name">Pinhoti 100</div>
+              <div class="race-location">Sylacauga, AL</div>
+              <div class="race-highlight">8th Overall · Top 10</div>
             </div>
-            <div class="race-meta">
-              <div class="race-time">6:52:47</div>
-              <div class="race-year">2024</div>
-            </div>
+            <div class="race-meta"><div class="race-year">2024</div></div>
           </div>
           <div class="race-entry">
             <div>
-              <div class="race-name">Potawatomi Trail Runs</div>
-              <div class="race-location">Pekin, IL</div>
-              <div class="race-highlight">Apr 10, 2026</div>
+              <div class="race-name">Bryce Canyon Ultras</div>
+              <div class="race-location">Bryce Canyon, UT</div>
             </div>
-          </div>
-          <div class="race-entry">
-            <div>
-              <div class="race-name">North Face Challenge</div>
-              <div class="race-progression">
-                <span class="prog-count">×3</span>
-                <span class="prog-item">2015 San Francisco (10:09)</span>
-                <span class="prog-item">2016 Blue Mountain (9:28)</span>
-                <span class="prog-item">2016 Park City (12:03)</span>
-              </div>
-            </div>
-          </div>
-          <div class="race-entry">
-            <div>
-              <div class="race-name">Grand Canyon Ultras</div>
-              <div class="race-location">Grand Canyon, AZ</div>
-            </div>
-            <div class="race-meta">
-              <div class="race-time">10:27:14</div>
-              <div class="race-year">2017</div>
-            </div>
+            <div class="race-meta"><div class="race-year">2017</div></div>
           </div>
         </div>
 
@@ -1423,10 +1396,7 @@
               <div class="race-name">Grindstone by UTMB</div>
               <div class="race-location">Swoope, VA</div>
             </div>
-            <div class="race-meta">
-              <div class="race-time">16:36:15</div>
-              <div class="race-year">2023</div>
-            </div>
+            <div class="race-meta"><div class="race-year">2023</div></div>
           </div>
           <div class="race-entry">
             <div>
@@ -1439,41 +1409,63 @@
         </div>
 
         <div class="race-subsection">
-          <div class="race-subsection-title">100 Miler</div>
+          <div class="race-subsection-title">50 Miler</div>
           <div class="race-entry">
             <div>
-              <div class="race-name">Pinhoti 100</div>
-              <div class="race-location">Sylacauga, AL</div>
-              <div class="race-highlight">8th Overall · Top 10</div>
+              <div class="race-name">Shawnee Hills</div>
+              <div class="race-location">Ozark, IL</div>
+              <div class="race-highlight">1st Place Overall Male · 6:52:47</div>
             </div>
-            <div class="race-meta">
-              <div class="race-time">21:27:16</div>
-              <div class="race-year">2024</div>
+            <div class="race-meta"><div class="race-year">2024</div></div>
+          </div>
+          <div class="race-entry race-upcoming">
+            <div>
+              <div class="race-name">Potawatomi Trail Runs</div>
+              <div class="race-location">Pekin, IL</div>
+              <div class="race-highlight">Apr 10, 2026 — Upcoming</div>
             </div>
           </div>
           <div class="race-entry">
             <div>
-              <div class="race-name">Bryce Canyon Ultras</div>
-              <div class="race-location">Bryce Canyon, UT</div>
+              <div class="race-name">The North Face Endurance Challenge Series</div>
+              <div class="race-progression">
+                <span class="prog-item">2015 San Francisco</span>
+                <span class="prog-item">2016 Blue Mountain (Ontario)</span>
+                <span class="prog-item">2016 Park City (Utah)</span>
+              </div>
             </div>
-            <div class="race-meta">
-              <div class="race-time">28:11:32</div>
-              <div class="race-year">2017</div>
+          </div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Grand Canyon Ultras</div>
+              <div class="race-location">Grand Canyon, AZ</div>
             </div>
+            <div class="race-meta"><div class="race-year">2017</div></div>
           </div>
         </div>
 
         <div class="race-subsection">
-          <div class="race-subsection-title">200+ Milers</div>
+          <div class="race-subsection-title">50K</div>
           <div class="race-entry">
             <div>
-              <div class="race-name">Moab 240 Endurance Run</div>
-              <div class="race-location">Moab, UT · 240 Miles</div>
-              <div class="race-highlight">29th Overall · Top 30 · 85 hours through the desert</div>
+              <div class="race-name">Cry Me A River</div>
+              <div class="race-location">Peoria, IL</div>
+              <div class="race-progression">
+                <span class="prog-count">×2</span>
+                <span class="prog-item">2024: <span class="prog-result">3rd Place</span></span>
+                <span class="prog-item">2025: <span class="prog-result">1st Place OA</span></span>
+              </div>
             </div>
-            <div class="race-meta">
-              <div class="race-time">85:25:36</div>
-              <div class="race-year">2018</div>
+          </div>
+          <div class="race-entry">
+            <div>
+              <div class="race-name">Shawnee Hills</div>
+              <div class="race-location">Ozark, IL</div>
+              <div class="race-progression">
+                <span class="prog-count">×2</span>
+                <span class="prog-item">2023: <span class="prog-result">6th OA</span></span>
+                <span class="prog-item">2024: <span class="prog-result">2nd Place</span></span>
+              </div>
             </div>
           </div>
         </div>
@@ -1504,20 +1496,14 @@
               <div class="race-location">Potosi, MO</div>
               <div class="race-highlight">5th Overall</div>
             </div>
-            <div class="race-meta">
-              <div class="race-time">4:18:13</div>
-              <div class="race-year">2024</div>
-            </div>
+            <div class="race-meta"><div class="race-year">2024</div></div>
           </div>
           <div class="race-entry">
             <div>
-              <div class="race-name">North Face Challenge</div>
-              <div class="race-location">Eagle, WI</div>
+              <div class="race-name">The North Face Endurance Challenge Series</div>
+              <div class="race-location">Madison (Eagle, WI)</div>
             </div>
-            <div class="race-meta">
-              <div class="race-time">4:55:54</div>
-              <div class="race-year">2016</div>
-            </div>
+            <div class="race-meta"><div class="race-year">2016</div></div>
           </div>
         </div>
 
@@ -1530,13 +1516,6 @@
               <div class="race-highlight">Ironman Finisher</div>
             </div>
             <div class="race-meta"><div class="race-year">2017</div></div>
-          </div>
-          <div class="race-entry">
-            <div>
-              <div class="race-name">Pere Marquette Trail Run</div>
-              <div class="race-location">Grafton, IL</div>
-            </div>
-            <div class="race-meta"><div class="race-year">×4</div></div>
           </div>
         </div>
       </div>
