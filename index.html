@@ -1479,3 +1479,32 @@
   <div class="footer-statement">
     "I build systems that create value at scale — funded by the wealth I generate, grounded in my family, and designed so I never trade my freedom for someone else's scoreboard."
   </div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/zacharydicken/" target="_blank">LinkedIn</a>
+    <a href="mailto:Zdicken6@gmail.com">Email</a>
+  </div>
+  <div class="footer-copy">© 2026 Zachary Dicken · Chicago, IL</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.background = window.scrollY > 80
+      ? 'rgba(10, 15, 13, 0.95)'
+      : 'rgba(10, 15, 13, 0.7)';
+  });
+</script>
+
+</body>
+</html>
