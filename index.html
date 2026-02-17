@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0f0d">
 <title>Zachary Dicken — Executive · Ultramarathoner · Entrepreneur</title>
 <meta name="description" content="Executive. Ultramarathoner. Entrepreneur. Dad. Strategy, endurance, and the infinite game.">
 <link rel="canonical" href="https://zacharydicken.com/">
@@ -30,7 +31,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -63,6 +64,12 @@
     background: rgba(10, 15, 13, 0.7);
     border-bottom: 1px solid var(--border);
     transition: all 0.4s ease;
+  }
+
+  .nav-toggle-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 
   .nav-name {
@@ -201,6 +208,13 @@
     background: rgba(163, 196, 168, 0.05);
   }
 
+  .world-pill,
+  .nav-links a,
+  .footer-links a {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
   .scroll-indicator {
     position: absolute;
     bottom: 2.5rem;
@@ -223,7 +237,7 @@
 
   /* ── Sections ── */
   section { padding: 7rem 2rem; }
-  .container { max-width: 1000px; margin: 0 auto; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 1.25rem; }
 
   .section-label {
     font-size: 0.68rem;
@@ -256,6 +270,8 @@
     position: relative;
     overflow: hidden;
   }
+
+  .manifesto-card.manifesto-spaced { margin-bottom: 3rem; }
 
   .manifesto-card::before {
     content: '';
@@ -487,6 +503,12 @@
     margin-bottom: 0.6rem;
   }
 
+  .timeline-desc.timeline-detail {
+    margin-top: 0.75rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
   .timeline-desc {
     color: var(--text-secondary);
     font-size: 0.85rem;
@@ -638,6 +660,14 @@
     color: var(--accent);
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .section-intro {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 600px;
+    line-height: 1.8;
     margin-bottom: 1rem;
   }
 
@@ -881,18 +911,95 @@
   @media (max-width: 768px) {
     nav { padding: 1rem 1.25rem; }
     .nav-links { display: none; }
-    section { padding: 4.5rem 1.25rem; }
-    .golden-circle-wrapper { grid-template-columns: 1fr; justify-items: center; }
-    .bio-grid { grid-template-columns: 1fr; }
-    .race-columns { grid-template-columns: 1fr; }
-    .awards-grid { grid-template-columns: 1fr; }
-    .education-grid { grid-template-columns: 1fr; }
+    .nav-open .nav-links {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(10, 15, 13, 0.98);
+      padding: 1.5rem 1.25rem;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+    }
+    .nav-open .nav-links a {
+      padding: 0.5rem 0;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      cursor: pointer;
+      color: var(--text-secondary);
+    }
+    .nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+    .nav-toggle { transition: all 0.3s; }
+    .nav-toggle span { transition: all 0.2s; }
+    .nav-toggle-row { display: flex; align-items: center; gap: 1rem; }
+    section { padding: 4rem 0; }
+    .container { padding: 0 1.25rem; }
+    .golden-circle-wrapper { grid-template-columns: 1fr; justify-items: center; gap: 2.5rem; }
+    .circle-visual { width: 200px; height: 200px; }
+    .circle-ring.why { width: 70px; height: 70px; }
+    .circle-ring.how { width: 130px; height: 130px; }
+    .circle-ring.what { width: 200px; height: 200px; }
+    .bio-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .bio-stats { gap: 1rem; }
+    .race-columns { grid-template-columns: 1fr; gap: 2rem; }
+    .race-entry { grid-template-columns: 1fr; gap: 0.5rem; }
+    .race-meta { text-align: left; }
+    .awards-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .award-item { flex-wrap: wrap; gap: 0.5rem; }
+    .education-grid { grid-template-columns: 1fr; gap: 1rem; }
     .edu-pair .edu-card.edu-popout { position: relative; left: 0; margin-left: 0; width: 100%; }
-    .ventures-grid { grid-template-columns: 1fr; }
-    .community-items { grid-template-columns: 1fr; }
+    .ventures-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .venture-card { padding: 2rem; }
+    .community-items { grid-template-columns: 1fr; gap: 1rem; }
     .manifesto-card { padding: 2rem; }
     .hero-worlds { gap: 0.5rem; }
-    .world-pill { padding: 0.45rem 1rem; font-size: 0.65rem; }
+    .world-pill {
+      padding: 0.75rem 1.25rem;
+      font-size: 0.7rem;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-sub { font-size: 0.98rem; margin-bottom: 2rem; }
+    .hero h1 { font-size: clamp(2.25rem, 10vw, 4rem); }
+    .section-title { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+    .endurance-section .section-title { font-size: clamp(1.9rem, 7vw, 2.8rem); }
+    .footer-statement { font-size: 1.15rem; padding: 0 1rem; }
+    .scroll-indicator { bottom: 1.5rem; }
+    .hero-bg {
+      background:
+        linear-gradient(180deg, rgba(10,15,13,0.4) 0%, rgba(10,15,13,0.5) 35%, rgba(10,15,13,0.65) 50%, rgba(10,15,13,0.85) 80%, var(--bg-deep) 100%),
+        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=75') center/cover no-repeat;
+    }
+  }
+  @media (min-width: 769px) {
+    .nav-toggle { display: none; }
+    .nav-toggle-row { display: contents; }
   }
 </style>
 </head>
@@ -900,7 +1007,14 @@
 
 <!-- ── Nav ── -->
 <nav>
-  <div class="nav-name">Zachary Dicken</div>
+  <div class="nav-toggle-row">
+    <div class="nav-name">Zachary Dicken</div>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
   <ul class="nav-links">
     <li><a href="#philosophy">Philosophy</a></li>
     <li><a href="#about">About</a></li>
@@ -938,7 +1052,7 @@
       <div class="section-title">There is <em>no finish line.</em></div>
     </div>
 
-    <div class="manifesto-card reveal" style="margin-bottom: 3rem;">
+    <div class="manifesto-card manifesto-spaced reveal">
       <div class="manifesto-quote">
         "I play my own game. I create value at scale. I solve meaningful problems. I build wealth. I protect my time. I put my family first. There is no finish line."
       </div>
@@ -1040,7 +1154,7 @@
         <div class="timeline-role">Vice President, Partner Services, Operations & Supply Strategy</div>
         <div class="timeline-company">Ticketmaster · Live Nation Entertainment</div>
         <div class="timeline-desc">Leading the Resale Supply Chain — a large, dynamic performance-based team comprised of several groups working together to drive resale forward at scale.</div>
-        <div class="timeline-desc" style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--text-muted);">Spanning Tooling (Sales, Programs), Operations (BOS, 3PE, Client, Events), Support (APIs, Tooling, Open Ticketing, Salesforce), Partner Services (BizDev &amp; Relationship Strategy), and Communications (Partner Program, Global). Supply strategy represents ~50% of resale GTV and ~70% of marketplace inventory. Scaled 3PE from zero to a $XXX+ vertical. Key role in "Sell Instantly" — $XXX in ticket sales, 150% YoY growth.</div>
+        <div class="timeline-desc timeline-detail">Spanning Tooling (Sales, Programs), Operations (BOS, 3PE, Client, Events), Support (APIs, Tooling, Open Ticketing, Salesforce), Partner Services (BizDev &amp; Relationship Strategy), and Communications (Partner Program, Global). Supply strategy represents ~50% of resale GTV and ~70% of marketplace inventory. Scaled 3PE from zero to a $XXX+ vertical. Key role in "Sell Instantly" — $XXX in ticket sales, 150% YoY growth.</div>
         <div class="timeline-badges">
           <span class="badge">Supply Record '19, '22, '23, '24, '25</span>
           <span class="badge">$XXX+ Vertical</span>
@@ -1155,7 +1269,7 @@
     <div class="reveal">
       <div class="section-label">Building</div>
       <div class="section-title">Creating <em>value at scale</em></div>
-      <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 600px; line-height: 1.8; margin-bottom: 1rem;">The infinite game isn't just a philosophy — it's a business model. Build systems that create value, fund freedom, and compound over time.</p>
+      <p class="section-intro">The infinite game isn't just a philosophy — it's a business model. Build systems that create value, fund freedom, and compound over time.</p>
     </div>
 
     <div class="ventures-grid reveal">
@@ -1394,117 +1508,3 @@
           </div>
           <div class="race-entry">
             <div>
-              <div class="race-name">Berryman Trail Races</div>
-              <div class="race-location">Potosi, MO</div>
-            </div>
-            <div class="race-meta">
-              <div class="race-time">4:18:13</div>
-              <div class="race-year">2024</div>
-            </div>
-          </div>
-          <div class="race-entry">
-            <div>
-              <div class="race-name">North Face Challenge</div>
-              <div class="race-location">Eagle, WI</div>
-            </div>
-            <div class="race-meta">
-              <div class="race-time">4:56:54</div>
-              <div class="race-year">2017</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="race-subsection">
-          <div class="race-subsection-title">Triathlon & Other</div>
-          <div class="race-entry">
-            <div>
-              <div class="race-name">Ironman Maryland</div>
-              <div class="race-location">Full Distance Triathlon</div>
-              <div class="race-highlight">Ironman Finisher</div>
-            </div>
-            <div class="race-meta"><div class="race-year">2017</div></div>
-          </div>
-          <div class="race-entry">
-            <div>
-              <div class="race-name">Pere Marquette Trail Run</div>
-              <div class="race-location">Grafton, IL</div>
-            </div>
-            <div class="race-meta"><div class="race-year">×4</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ WORLD 4: COMMUNITY ═══════════ -->
-<div class="world-divider">
-  <div class="world-divider-label">04 — Community & Impact</div>
-</div>
-
-<section id="community">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-label">Giving Back</div>
-      <div class="section-title">Beyond <em>the day job</em></div>
-    </div>
-
-    <div class="community-items reveal">
-      <div class="community-card">
-        <h4>Positive Coaching Alliance</h4>
-        <div class="role">Young Associates Board · Chicago Chapter · 2016 — 2019</div>
-        <p>Supporting youth athletes through positive coaching practices.</p>
-      </div>
-      <div class="community-card">
-        <h4>City Year Chicago</h4>
-        <div class="role">Volunteer · 2014 — Present</div>
-        <p>Life mapping at Schurz High School and day-of-service programs.</p>
-      </div>
-      <div class="community-card">
-        <h4>Greater Chicago Food Depository</h4>
-        <div class="role">Volunteer · 2013 — Present</div>
-        <p>Ongoing food drive and social services support.</p>
-      </div>
-      <div class="community-card">
-        <h4>Chicago Fire Foundation</h4>
-        <div class="role">Marathon Runner & Supporter</div>
-        <p>Ran the Chicago Marathon on behalf of the Chicago Fire Foundation's P.L.A.Y.S. program.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Footer ── -->
-<footer id="connect">
-  <div class="footer-statement">
-    "I build systems that create value at scale — funded by the wealth I generate, grounded in my family, and designed so I never trade my freedom for someone else's scoreboard."
-  </div>
-  <div class="footer-links">
-    <a href="https://www.linkedin.com/in/zacharydicken/" target="_blank">LinkedIn</a>
-    <a href="mailto:Zdicken6@gmail.com">Email</a>
-  </div>
-  <div class="footer-copy">© 2026 Zachary Dicken · Chicago, IL</div>
-</footer>
-
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => observer.observe(el));
-
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    nav.style.background = window.scrollY > 80
-      ? 'rgba(10, 15, 13, 0.95)'
-      : 'rgba(10, 15, 13, 0.7)';
-  });
-</script>
-
-</body>
-</html>
