@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zachary Dicken — Executive · Ultramarathoner · Entrepreneur</title>
+<meta name="description" content="Executive. Ultramarathoner. Entrepreneur. Dad. Strategy, endurance, and the infinite game.">
+<link rel="canonical" href="https://zacharydicken.com/">
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zacharydicken.com/">
+<meta property="og:title" content="Zachary Dicken">
+<meta property="og:description" content="Executive. Ultramarathoner. Entrepreneur. Dad. Playing the infinite game — on my own terms.">
+<meta property="og:site_name" content="Zachary Dicken">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #0a0f0d;
+    --bg-card: #111916;
+    --bg-card-hover: #162019;
+    --text-primary: #e8ede9;
+    --text-secondary: #8a9b8e;
+    --text-muted: #556b5a;
+    --accent: #a3c4a8;
+    --accent-warm: #c4b78a;
+    --accent-glow: rgba(163, 196, 168, 0.08);
+    --border: rgba(163, 196, 168, 0.1);
+    --border-hover: rgba(163, 196, 168, 0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── Nav ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    background: rgba(10, 15, 13, 0.7);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.4s ease;
+  }
+
+  .nav-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.25rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(10,15,13,0.2) 0%, rgba(10,15,13,0.05) 30%, rgba(10,15,13,0.8) 75%, var(--bg-deep) 100%),
+      url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80') center/cover no-repeat;
+    transform: scale(1.05);
+    animation: heroZoom 25s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroZoom {
+    0% { transform: scale(1.05); }
+    100% { transform: scale(1.15); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 860px;
+    padding: 0 2rem;
+    animation: fadeUp 1.2s ease-out 0.3s both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--accent); }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+
+  /* Four worlds pills */
+  .hero-worlds {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    animation: fadeUp 1.2s ease-out 0.8s both;
+  }
+
+  .world-pill {
+    padding: 0.55rem 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: rgba(17, 25, 22, 0.5);
+    backdrop-filter: blur(10px);
+  }
+
+  .world-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(163, 196, 168, 0.05);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeUp 1.2s ease-out 1.2s both;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* ── Sections ── */
+  section { padding: 7rem 2rem; }
+  .container { max-width: 1000px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 2rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  /* ── Infinite Game ── */
+  .infinite-game {
+    background: linear-gradient(180deg, var(--bg-deep) 0%, #0d1410 50%, var(--bg-deep) 100%);
+  }
+
+  .manifesto-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .manifesto-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  .manifesto-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .manifesto-footer {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .infinite-prose {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.9;
+    max-width: 720px;
+  }
+
+  .infinite-prose p { margin-bottom: 1.5rem; }
+  .infinite-prose em { color: var(--accent); font-style: italic; }
+  .infinite-prose strong { color: var(--text-primary); font-weight: 400; }
+
+  /* ── Golden Circle ── */
+  .golden-circle-wrapper {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .circle-visual {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circle-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+  }
+
+  .circle-ring:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 40px var(--accent-glow);
+  }
+
+  .circle-ring.why { width: 90px; height: 90px; background: rgba(163,196,168,0.12); z-index: 3; }
+  .circle-ring.how { width: 170px; height: 170px; background: rgba(163,196,168,0.05); z-index: 2; }
+  .circle-ring.what { width: 260px; height: 260px; background: rgba(163,196,168,0.02); z-index: 1; }
+
+  .circle-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .circle-ring.how .circle-label,
+  .circle-ring.what .circle-label {
+    position: absolute;
+    bottom: 10px;
+    color: var(--text-muted);
+  }
+
+  .golden-items { display: flex; flex-direction: column; gap: 1.75rem; }
+
+  .golden-item {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .golden-item:last-child { border-bottom: none; }
+
+  .golden-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .golden-item p { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; }
+
+  /* ── World Divider ── */
+  .world-divider {
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .world-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+
+  .world-divider-label {
+    position: relative;
+    display: inline-block;
+    background: var(--bg-deep);
+    padding: 0 2rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── Bio / About ── */
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .bio-text p {
+    color: var(--text-secondary);
+    font-size: 0.93rem;
+    margin-bottom: 1.4rem;
+    line-height: 1.8;
+  }
+
+  .bio-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.85rem;
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* ── Career Timeline ── */
+  .timeline { margin-top: 3rem; position: relative; }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), var(--border), transparent);
+  }
+
+  .timeline-item {
+    padding-left: 3rem;
+    margin-bottom: 2.75rem;
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -3.5px; top: 8px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(163,196,168,0.3);
+  }
+
+  .timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-company {
+    font-size: 0.88rem;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .timeline-desc {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.7;
+    max-width: 620px;
+  }
+
+  .timeline-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── Education ── */
+  .education-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .edu-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+  }
+
+  .edu-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+
+  .edu-year { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+  .edu-school { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--text-primary); margin-bottom: 0.35rem; font-weight: 500; }
+  .edu-detail { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+
+  .edu-honor {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.65rem;
+    color: var(--accent-warm);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── Ventures Section ── */
+  .ventures-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .venture-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .venture-card:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
+    transform: translateY(-3px);
+  }
+
+  .venture-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .venture-card:hover::before { opacity: 1; }
+
+  .venture-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .venture-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+  }
+
+  .venture-role {
+    font-size: 0.78rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .venture-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .venture-status {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-size: 0.62rem;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .status-active { border-color: rgba(163,196,168,0.3); color: var(--accent); }
+  .status-building { border-color: rgba(196,183,138,0.3); color: var(--accent-warm); }
+
+  /* ── Endurance ── */
+  .endurance-section {
+    background: linear-gradient(180deg, var(--bg-deep) 0%, #0d110f 50%, var(--bg-deep) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .endurance-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(163,196,168,0.03) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(196,183,138,0.02) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .endurance-intro {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .race-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .race-column h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .race-entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(163,196,168,0.05);
+    align-items: start;
+  }
+
+  .race-entry:last-child { border-bottom: none; }
+  .race-name { font-size: 0.88rem; color: var(--text-primary); }
+  .race-location { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.1rem; }
+  .race-meta { text-align: right; }
+  .race-time { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent); }
+  .race-year { font-size: 0.68rem; color: var(--text-muted); margin-top: 0.1rem; }
+
+  .race-highlight {
+    display: inline-block;
+    margin-top: 0.25rem;
+    font-size: 0.6rem;
+    padding: 0.15rem 0.45rem;
+    background: rgba(196,183,138,0.1);
+    border: 1px solid rgba(196,183,138,0.2);
+    color: var(--accent-warm);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 1px;
+  }
+
+  /* ── Awards ── */
+  .awards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .award-group h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .award-item {
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .award-name { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4; }
+  .award-year { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; }
+
+  /* ── Community ── */
+  .community-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .community-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 1.75rem;
+    transition: all 0.3s;
+  }
+
+  .community-card:hover { border-color: var(--border-hover); }
+
+  .community-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+
+  .community-card .role { font-size: 0.75rem; color: var(--accent); margin-bottom: 0.4rem; }
+  .community-card p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+
+  /* ── Footer ── */
+  footer {
+    padding: 5rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    position: relative;
+  }
+
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 60px; height: 1px;
+    background: var(--accent);
+  }
+
+  .footer-statement {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.65;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  .footer-copy {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── Scroll reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    section { padding: 4.5rem 1.25rem; }
+    .golden-circle-wrapper { grid-template-columns: 1fr; justify-items: center; }
+    .bio-grid { grid-template-columns: 1fr; }
+    .race-columns { grid-template-columns: 1fr; }
+    .awards-grid { grid-template-columns: 1fr; }
+    .education-grid { grid-template-columns: 1fr; }
+    .ventures-grid { grid-template-columns: 1fr; }
+    .community-items { grid-template-columns: 1fr; }
+    .manifesto-card { padding: 2rem; }
+    .hero-worlds { gap: 0.5rem; }
+    .world-pill { padding: 0.45rem 1rem; font-size: 0.65rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav>
+  <div class="nav-name">Zachary Dicken</div>
+  <ul class="nav-links">
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#professional">Professional</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#endurance">Endurance</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Strategy · Endurance · Purpose</div>
+    <h1>Zachary <em>Dicken</em></h1>
+    <p class="hero-sub">Executive. Ultramarathoner. Entrepreneur. Dad.<br>Playing the infinite game — on my own terms.</p>
+    <div class="hero-worlds">
+      <a href="#professional" class="world-pill">Professional</a>
+      <a href="#ventures" class="world-pill">Wash Park Ventures</a>
+      <a href="#endurance" class="world-pill">Endurance</a>
+      <a href="#running-tree" class="world-pill">The Running Tree</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── The Infinite Game ── -->
+<section class="infinite-game" id="philosophy">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">The Infinite Game</div>
+      <div class="section-title">There is <em>no finish line.</em></div>
+    </div>
+
+    <div class="manifesto-card reveal" style="margin-bottom: 3rem;">
+      <div class="manifesto-quote">
+        "I play my own game. I create value at scale. I solve meaningful problems. I build wealth. I protect my time. I put my family first. There is no finish line."
+      </div>
+      <div class="manifesto-footer">Personal Manifesto</div>
+    </div>
+
+    <div class="infinite-prose reveal">
+      <p>There are two kinds of games. Finite games have known players, fixed rules, and an agreed-upon endpoint. Someone wins, someone loses, and then it's over. Most people unconsciously play life this way.</p>
+      <p>An infinite game has no finish line. The players change, the rules change, and the entire point is to <em>keep playing</em>. You're not trying to win — you're trying to build something that outlasts any single milestone.</p>
+      <p>Every decision gets filtered through one question: <strong>does this keep me in my game, or does it pull me into someone else's?</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Golden Circle ── -->
+<section id="why">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Start With Why</div>
+      <div class="section-title">The <em>Golden Circle</em></div>
+    </div>
+
+    <div class="golden-circle-wrapper reveal">
+      <div class="circle-visual">
+        <div class="circle-ring what"><div class="circle-label">What</div></div>
+        <div class="circle-ring how"><div class="circle-label">How</div></div>
+        <div class="circle-ring why"><div class="circle-label">Why</div></div>
+      </div>
+
+      <div class="golden-items">
+        <div class="golden-item">
+          <h3>Why</h3>
+          <p>To continuously evolve as a person, leader, and father — proving through action that you can build wealth, solve meaningful problems, and never sacrifice the people and freedom that matter most.</p>
+        </div>
+        <div class="golden-item">
+          <h3>How</h3>
+          <p>By setting audacious goals and learning from the pursuit. By building strong teams, embracing discomfort, leading with trust, and treating every challenge — from a boardroom to a 240-mile desert race — as fuel for growth.</p>
+        </div>
+        <div class="golden-item">
+          <h3>What</h3>
+          <p>Lead strategy and operations at scale. Build systems that create value. Run ultramarathons. Found ventures. Show up consistently as a husband, dad, and friend. Create a life that doesn't require permission.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ── -->
+<section id="about">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">About</div>
+      <div class="section-title">The <em>short version</em></div>
+    </div>
+
+    <div class="bio-grid reveal">
+      <div class="bio-text">
+        <p>I'm an executive focused on strategy and business development, with 15+ years leading revenue growth and operational efficiency across the sports and tech industries. I'm motivated by solving problems, building strong teams, and driving strategic decisions that move business forward.</p>
+        <p>My career has given me opportunities to lead large cross-functional teams in both mid-sized companies and Fortune 500 environments, navigating dynamic, high-stakes situations while creating clarity and setting culture and pace.</p>
+        <p>Outside of work, I'm an ultrarunner and entrepreneur, drawn to setting big goals and learning from the pursuit. I'm focused on evolving as a person and leader and showing up consistently as a dad, husband, and friend.</p>
+      </div>
+      <div class="bio-stats">
+        <div class="stat-card">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years in Sports & Tech</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">75+</div>
+          <div class="stat-label">Team Members Led</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">240</div>
+          <div class="stat-label">Longest Race (Miles)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">9</div>
+          <div class="stat-label">Promotions at Chicago Fire</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WORLD 1: PROFESSIONAL ═══════════ -->
+<div class="world-divider">
+  <div class="world-divider-label">01 — Professional</div>
+</div>
+
+<section id="professional">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Career</div>
+      <div class="section-title">The <em>path</em></div>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-date">2023 — Present</div>
+        <div class="timeline-role">Vice President, Partner Services, Operations & Supply Strategy</div>
+        <div class="timeline-company">Ticketmaster · Live Nation Entertainment</div>
+        <div class="timeline-desc">Leading seven groups and ~75 team members. Supply strategy represents ~50% of overall resale GTV and ~70% of all marketplace inventory annually. Record quarterly performance across all major metrics in 2024. Helped scale the 3PE business from zero to a $1B+ sales vertical. Key role in developing "Sell Instantly" — ~$200M in ticket sales with 150% YoY growth.</div>
+        <div class="timeline-badges">
+          <span class="badge">Supply Record '19, '22, '23, '24</span>
+          <span class="badge">$1B+ Vertical</span>
+          <span class="badge">$200M Fan Program</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2021 — 2023</div>
+        <div class="timeline-role">Senior Director, Partner Services & Supply Strategy</div>
+        <div class="timeline-company">Ticketmaster</div>
+        <div class="timeline-desc">Navigated the resale supply vertical through COVID and back to scale. ~40M barcodes and $2.6B GTV — 2x revenue vs. pre-COVID levels. Grew the Partner Program to 1,500+ sellers. Launched Open Ticketing Resale Validation for MLB.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2019 — 2021</div>
+        <div class="timeline-role">Director of Supply Strategy</div>
+        <div class="timeline-company">Ticketmaster</div>
+        <div class="timeline-desc">Joined as IC, quickly became thought leader. Managed top 100 resellers. Saved $30M by revising clawback processes during COVID and recovered ~$115M in sales collections. Pioneered 15 pivotal NFL deals capturing over half of Ticketmaster's NFL supply.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2010 — 2019</div>
+        <div class="timeline-role">Inside Sales Rep → Senior Director (9 promotions)</div>
+        <div class="timeline-company">Chicago Fire Soccer Club · MLS</div>
+        <div class="timeline-desc">Nearly a decade rising from entry-level to senior leadership across ticketing, operations, and business intelligence. Led 35+ professionals across six departments. Founded the BI team. Organized the 2017 MLS All-Star Game at Soldier Field. Represented the club in München for the Bayern Munich friendly. Fastest promotion from Inside Sales in program history.</div>
+        <div class="timeline-badges">
+          <span class="badge">MLS Commissioner's Award ×3</span>
+          <span class="badge">J.D. Power Best Fan Experience</span>
+          <span class="badge">Exec of Year Finalist</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2009 — 2010</div>
+        <div class="timeline-role">DIA & Athletic Ticket Office</div>
+        <div class="timeline-company">University of Illinois at Urbana-Champaign</div>
+        <div class="timeline-desc">Dual roles in Marketing and University Ticket Office. Contributed to record-breaking revenue and I-Fund donations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Education</div>
+      <div class="section-title"><em>Foundation</em></div>
+    </div>
+
+    <div class="education-grid reveal">
+      <div class="edu-card">
+        <div class="edu-year">2018</div>
+        <div class="edu-school">Northwestern — Kellogg</div>
+        <div class="edu-detail">Executive Education in Competitive Strategy & Business</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2010</div>
+        <div class="edu-school">University of Illinois</div>
+        <div class="edu-detail">BS in Recreation, Sport & Tourism — Sport Management</div>
+        <div class="edu-honor">Highest Honors · Tau Sigma Honor Society</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2008</div>
+        <div class="edu-school">Lincoln Land CC</div>
+        <div class="edu-detail">AS in Business Administration</div>
+        <div class="edu-honor">NJCAA Soccer Player</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Awards -->
+<section id="awards">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Recognition</div>
+      <div class="section-title"><em>Milestones</em> along the way</div>
+    </div>
+
+    <div class="awards-grid reveal">
+      <div class="award-group">
+        <h3>Leadership & Management</h3>
+        <div class="award-item"><span class="award-name">Ticketmaster Resale Supply Record</span><span class="award-year">'19, '22, '23, '24</span></div>
+        <div class="award-item"><span class="award-name">MLS Commissioner's Award — ST Renewals</span><span class="award-year">2018</span></div>
+        <div class="award-item"><span class="award-name">MLS Ticket Sales Team of the Year Finalist</span><span class="award-year">2017</span></div>
+        <div class="award-item"><span class="award-name">MLS Ticket Sales Impact Award — Outside Sales</span><span class="award-year">2017</span></div>
+        <div class="award-item"><span class="award-name">J.D. Power Best Fan Experience — Chicago</span><span class="award-year">2016</span></div>
+        <div class="award-item"><span class="award-name">MLS Commissioner's Award — Group Sales</span><span class="award-year">'15, '17</span></div>
+        <div class="award-item"><span class="award-name">MLS President's Award — Group Tickets</span><span class="award-year">'13, '14, '16</span></div>
+      </div>
+      <div class="award-group">
+        <h3>Individual</h3>
+        <div class="award-item"><span class="award-name">1st Overall Male — Shawnee Hills 50K</span><span class="award-year">2024</span></div>
+        <div class="award-item"><span class="award-name">MLS Ticketing Exec of the Year Finalist</span><span class="award-year">2017</span></div>
+        <div class="award-item"><span class="award-name">MLS All-Sales Team — Season Tickets</span><span class="award-year">2012</span></div>
+        <div class="award-item"><span class="award-name">MLS All-Rookie Team — Season Tickets</span><span class="award-year">2011</span></div>
+        <div class="award-item"><span class="award-name">Top 10 Finisher — Zion 100K</span><span class="award-year">2020</span></div>
+        <div class="award-item"><span class="award-name">Top 30 Finisher — Moab 240</span><span class="award-year">2018</span></div>
+        <div class="award-item"><span class="award-name">Ironman Maryland Finisher</span><span class="award-year">2017</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WORLD 2: VENTURES ═══════════ -->
+<div class="world-divider">
+  <div class="world-divider-label">02 — Ventures & Entrepreneurship</div>
+</div>
+
+<section id="ventures">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Building</div>
+      <div class="section-title">Creating <em>value at scale</em></div>
+      <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 600px; line-height: 1.8; margin-bottom: 1rem;">The infinite game isn't just a philosophy — it's a business model. Build systems that create value, fund freedom, and compound over time.</p>
+    </div>
+
+    <div class="ventures-grid reveal">
+      <div class="venture-card">
+        <span class="venture-icon">◆</span>
+        <div class="venture-name">Wash Park Ventures</div>
+        <div class="venture-role">Founder</div>
+        <div class="venture-desc">Entrepreneurial venture focused on building wealth through value creation at scale. Solving big, meaningful problems while maintaining full control over time and priorities.</div>
+        <span class="venture-status status-building">Building</span>
+      </div>
+      <div class="venture-card" id="running-tree">
+        <span class="venture-icon">🌲</span>
+        <div class="venture-name">The Running Tree</div>
+        <div class="venture-role">Founder · 2015 — Present</div>
+        <div class="venture-desc">Born from the trails — a venture rooted in the running and endurance community. Connecting the culture of distance running with purpose-driven commerce.</div>
+        <span class="venture-status status-active">Active</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WORLD 3: ENDURANCE ═══════════ -->
+<div class="world-divider">
+  <div class="world-divider-label">03 — Endurance</div>
+</div>
+
+<section class="endurance-section" id="endurance">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">The Miles</div>
+      <div class="section-title">The miles <em>that made me</em></div>
+      <p class="endurance-intro">Ultrarunning isn't a hobby — it's a practice. Every race is a conversation with yourself about who you are when it gets hard and you keep going anyway.</p>
+    </div>
+
+    <div class="race-columns reveal">
+      <div class="race-column">
+        <h3>Ultramarathons</h3>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Potawatomi Trail Runs — 60 Miler</div>
+            <div class="race-location">Pekin, IL</div>
+          </div>
+          <div class="race-meta"><div class="race-year">2028</div></div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Shawnee Hills Trail Races — 100K</div>
+            <div class="race-location">Ozark, IL</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">12:40:56</div>
+            <div class="race-year">2026</div>
+          </div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Pinhoti 100 — 100 Miler</div>
+            <div class="race-location">Sylacauga, AL</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">21:27:18</div>
+            <div class="race-year">2024</div>
+          </div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Shawnee Hills — 69K</div>
+            <div class="race-location">Ozark, IL</div>
+            <div class="race-highlight">1st Place Overall Male</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">6:52:47</div>
+            <div class="race-year">2024</div>
+          </div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Grindstone by UTMB — 100K</div>
+            <div class="race-location">Swoope, VA</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">18:38:16</div>
+            <div class="race-year">2023</div>
+          </div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Zion Ultras — 100K</div>
+            <div class="race-location">Apple Valley, UT</div>
+            <div class="race-highlight">Top 10 Finisher</div>
+          </div>
+          <div class="race-meta"><div class="race-year">2020</div></div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Moab 240 Endurance Run</div>
+            <div class="race-location">Moab, UT · 240 Miles</div>
+            <div class="race-highlight">Top 30 · 85 hours through the desert</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">85:25:38</div>
+            <div class="race-year">2018</div>
+          </div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Bryce Canyon Ultras — 100 Miler</div>
+            <div class="race-location">Bryce Canyon, UT</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">28:11:32</div>
+            <div class="race-year">2017</div>
+          </div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Grand Canyon Ultras — 60 Miler</div>
+            <div class="race-location">Grand Canyon, AZ</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">10:27:14</div>
+            <div class="race-year">2017</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="race-column">
+        <h3>Marathons, Triathlon & Other</h3>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Berryman Trail Races — Marathon</div>
+            <div class="race-location">Potosi, MO</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">4:18:13</div>
+            <div class="race-year">2024</div>
+          </div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">North Face Challenge — 60 Miler</div>
+            <div class="race-location">Park City, UT</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">12:03:27</div>
+            <div class="race-year">2018</div>
+          </div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">North Face Challenge — 60 Miler</div>
+            <div class="race-location">Blue Mountain, ON</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">9:28:38</div>
+            <div class="race-year">2018</div>
+          </div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">North Face Challenge — Marathon</div>
+            <div class="race-location">Eagle, WI</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">4:56:54</div>
+            <div class="race-year">2017</div>
+          </div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Ironman Maryland</div>
+            <div class="race-location">Full Distance Triathlon</div>
+            <div class="race-highlight">Ironman Finisher</div>
+          </div>
+          <div class="race-meta"><div class="race-year">2017</div></div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">North Face Challenge — 60 Miler</div>
+            <div class="race-location">San Francisco, CA</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">10:08:16</div>
+            <div class="race-year">2016</div>
+          </div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Pere Marquette Trail Run — 7.5 Mi</div>
+            <div class="race-location">Grafton, IL</div>
+          </div>
+          <div class="race-meta">
+            <div class="race-time">1:05:28</div>
+            <div class="race-year">2018</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WORLD 4: COMMUNITY ═══════════ -->
+<div class="world-divider">
+  <div class="world-divider-label">04 — Community & Impact</div>
+</div>
+
+<section id="community">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Giving Back</div>
+      <div class="section-title">Beyond <em>the day job</em></div>
+    </div>
+
+    <div class="community-items reveal">
+      <div class="community-card">
+        <h4>Positive Coaching Alliance</h4>
+        <div class="role">Young Associates Board · Chicago Chapter · 2016 — 2019</div>
+        <p>Supporting youth athletes through positive coaching practices.</p>
+      </div>
+      <div class="community-card">
+        <h4>City Year Chicago</h4>
+        <div class="role">Volunteer · 2014 — Present</div>
+        <p>Life mapping at Schurz High School and day-of-service programs.</p>
+      </div>
+      <div class="community-card">
+        <h4>Greater Chicago Food Depository</h4>
+        <div class="role">Volunteer · 2013 — Present</div>
+        <p>Ongoing food drive and social services support.</p>
+      </div>
+      <div class="community-card">
+        <h4>Chicago Fire Foundation</h4>
+        <div class="role">Marathon Runner & Supporter</div>
+        <p>Ran the Chicago Marathon on behalf of the Chicago Fire Foundation's P.L.A.Y.S. program.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer id="connect">
+  <div class="footer-statement">
+    "I build systems that create value at scale — funded by the wealth I generate, grounded in my family, and designed so I never trade my freedom for someone else's scoreboard."
+  </div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/zacharydicken/" target="_blank">LinkedIn</a>
+    <a href="mailto:Zdicken6@gmail.com">Email</a>
+  </div>
+  <div class="footer-copy">© 2026 Zachary Dicken · Chicago, IL</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.background = window.scrollY > 80
+      ? 'rgba(10, 15, 13, 0.95)'
+      : 'rgba(10, 15, 13, 0.7)';
+  });
+</script>
+
+</body>
+</html>
