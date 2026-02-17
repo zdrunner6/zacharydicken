@@ -788,6 +788,36 @@
     border-radius: 1px;
   }
 
+  .race-progression {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .race-progression .prog-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-right: 0.35rem;
+  }
+
+  .race-progression .prog-item {
+    display: inline;
+  }
+
+  .race-progression .prog-item + .prog-item::before {
+    content: ' · ';
+    color: var(--text-muted);
+  }
+
+  .race-progression .prog-result {
+    color: var(--accent-warm);
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
   /* ── Awards ── */
   .awards-grid {
     display: grid;
@@ -1274,14 +1304,14 @@
 
     <div class="ventures-grid reveal">
       <div class="venture-card">
-        <span class="venture-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M8 9l4-4 4 4"/></svg></span>
+        <span class="venture-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L16 10L12 18L8 10Z"/></svg></span>
         <div class="venture-name">Wash Park Ventures</div>
         <div class="venture-role">Founder</div>
         <div class="venture-desc">Entrepreneurial venture focused on building wealth through value creation at scale. Solving big, meaningful problems while maintaining full control over time and priorities.</div>
         <span class="venture-status status-building">Building</span>
       </div>
       <div class="venture-card" id="running-tree">
-        <span class="venture-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L8 12h2v9h4v-9h2L12 3z"/><path d="M10 21h4"/></svg></span>
+        <span class="venture-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L5 14h3v7h8v-7h3L12 3z"/></svg></span>
         <div class="venture-name">The Running Tree</div>
         <div class="venture-role">Founder · 2015 — Present</div>
         <div class="venture-desc">Born from the trails — a venture rooted in the running and endurance community. Connecting the culture of distance running with purpose-driven commerce.</div>
@@ -1314,41 +1344,24 @@
             <div>
               <div class="race-name">Cry Me A River</div>
               <div class="race-location">Peoria, IL</div>
-              <div class="race-highlight">1st Place Overall Male</div>
+              <div class="race-progression">
+                <span class="prog-count">×3</span>
+                <span class="prog-item">2023: <span class="prog-result">3rd OA</span></span>
+                <span class="prog-item">2024: <span class="prog-result">1st OA</span></span>
+                <span class="prog-item">2025: <span class="prog-result">1st Place Overall</span></span>
+              </div>
             </div>
-            <div class="race-meta"><div class="race-year">2025</div></div>
-          </div>
-          <div class="race-entry">
-            <div>
-              <div class="race-name">Cry Me A River</div>
-              <div class="race-location">Peoria, IL</div>
-              <div class="race-highlight">1st OA</div>
-            </div>
-            <div class="race-meta"><div class="race-year">2024</div></div>
-          </div>
-          <div class="race-entry">
-            <div>
-              <div class="race-name">Cry Me A River</div>
-              <div class="race-location">Peoria, IL</div>
-              <div class="race-highlight">3rd OA</div>
-            </div>
-            <div class="race-meta"><div class="race-year">2023</div></div>
           </div>
           <div class="race-entry">
             <div>
               <div class="race-name">Shawnee Hills</div>
               <div class="race-location">Ozark, IL</div>
-              <div class="race-highlight">2nd Place</div>
+              <div class="race-progression">
+                <span class="prog-count">×2</span>
+                <span class="prog-item">2023: <span class="prog-result">2nd Place</span></span>
+                <span class="prog-item">2024: <span class="prog-result">2nd Place</span></span>
+              </div>
             </div>
-            <div class="race-meta"><div class="race-year">2023</div></div>
-          </div>
-          <div class="race-entry">
-            <div>
-              <div class="race-name">Shawnee Hills</div>
-              <div class="race-location">Ozark, IL</div>
-              <div class="race-highlight">1st Overall</div>
-            </div>
-            <div class="race-meta"><div class="race-year">2024</div></div>
           </div>
         </div>
 
@@ -1369,37 +1382,18 @@
             <div>
               <div class="race-name">Potawatomi Trail Runs</div>
               <div class="race-location">Pekin, IL</div>
-            </div>
-            <div class="race-meta"><div class="race-year">2028</div></div>
-          </div>
-          <div class="race-entry">
-            <div>
-              <div class="race-name">North Face Challenge</div>
-              <div class="race-location">Park City, UT</div>
-            </div>
-            <div class="race-meta">
-              <div class="race-time">12:03:27</div>
-              <div class="race-year">2018</div>
+              <div class="race-highlight">Apr 10, 2026</div>
             </div>
           </div>
           <div class="race-entry">
             <div>
               <div class="race-name">North Face Challenge</div>
-              <div class="race-location">Blue Mountain, ON</div>
-            </div>
-            <div class="race-meta">
-              <div class="race-time">9:28:38</div>
-              <div class="race-year">2018</div>
-            </div>
-          </div>
-          <div class="race-entry">
-            <div>
-              <div class="race-name">North Face Challenge</div>
-              <div class="race-location">San Francisco, CA</div>
-            </div>
-            <div class="race-meta">
-              <div class="race-time">10:08:16</div>
-              <div class="race-year">2016</div>
+              <div class="race-progression">
+                <span class="prog-count">×3</span>
+                <span class="prog-item">2015 San Francisco (10:09)</span>
+                <span class="prog-item">2016 Blue Mountain (9:28)</span>
+                <span class="prog-item">2016 Park City (12:03)</span>
+              </div>
             </div>
           </div>
           <div class="race-entry">
@@ -1420,12 +1414,9 @@
             <div>
               <div class="race-name">Shawnee Hills Trail Races</div>
               <div class="race-location">Ozark, IL</div>
-              <div class="race-highlight">1st Overall · New Course Record</div>
+              <div class="race-highlight">1st Overall · Course Record · 12:40:55</div>
             </div>
-            <div class="race-meta">
-              <div class="race-time">12:40:56</div>
-              <div class="race-year">2025</div>
-            </div>
+            <div class="race-meta"><div class="race-year">2025</div></div>
           </div>
           <div class="race-entry">
             <div>
@@ -1433,7 +1424,7 @@
               <div class="race-location">Swoope, VA</div>
             </div>
             <div class="race-meta">
-              <div class="race-time">18:38:16</div>
+              <div class="race-time">16:36:15</div>
               <div class="race-year">2023</div>
             </div>
           </div>
@@ -1441,7 +1432,7 @@
             <div>
               <div class="race-name">Zion Ultras</div>
               <div class="race-location">Apple Valley, UT</div>
-              <div class="race-highlight">Top 10 Finisher</div>
+              <div class="race-highlight">8th Overall · Top 10</div>
             </div>
             <div class="race-meta"><div class="race-year">2020</div></div>
           </div>
@@ -1453,9 +1444,10 @@
             <div>
               <div class="race-name">Pinhoti 100</div>
               <div class="race-location">Sylacauga, AL</div>
+              <div class="race-highlight">8th Overall · Top 10</div>
             </div>
             <div class="race-meta">
-              <div class="race-time">21:27:18</div>
+              <div class="race-time">21:27:16</div>
               <div class="race-year">2024</div>
             </div>
           </div>
@@ -1477,10 +1469,10 @@
             <div>
               <div class="race-name">Moab 240 Endurance Run</div>
               <div class="race-location">Moab, UT · 240 Miles</div>
-              <div class="race-highlight">Top 30 · 85 hours through the desert</div>
+              <div class="race-highlight">29th Overall · Top 30 · 85 hours through the desert</div>
             </div>
             <div class="race-meta">
-              <div class="race-time">85:25:38</div>
+              <div class="race-time">85:25:36</div>
               <div class="race-year">2018</div>
             </div>
           </div>
@@ -1510,6 +1502,7 @@
             <div>
               <div class="race-name">Berryman Trail Races</div>
               <div class="race-location">Potosi, MO</div>
+              <div class="race-highlight">5th Overall</div>
             </div>
             <div class="race-meta">
               <div class="race-time">4:18:13</div>
@@ -1522,8 +1515,8 @@
               <div class="race-location">Eagle, WI</div>
             </div>
             <div class="race-meta">
-              <div class="race-time">4:56:54</div>
-              <div class="race-year">2017</div>
+              <div class="race-time">4:55:54</div>
+              <div class="race-year">2016</div>
             </div>
           </div>
         </div>
@@ -1559,8 +1552,8 @@
 <section id="community">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">Giving Back</div>
-      <div class="section-title">Beyond <em>the day job</em></div>
+      <div class="section-label">Community</div>
+      <div class="section-title">Beyond <em>myself</em></div>
     </div>
 
     <div class="community-items reveal">
@@ -1597,7 +1590,7 @@
     <a href="https://www.linkedin.com/in/zacharydicken/" target="_blank">LinkedIn</a>
     <a href="mailto:Zdicken6@gmail.com">Email</a>
   </div>
-  <div class="footer-copy">© 2026 Zachary Dicken · Chicago, IL</div>
+  <div class="footer-copy">© 2026 Zachary Dicken · Chicago — Springfield — Arizona — Colorado</div>
 </footer>
 
 <script>
