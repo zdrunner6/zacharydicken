@@ -513,9 +513,30 @@
   /* ── Education ── */
   .education-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
     margin-top: 3rem;
+  }
+
+  .edu-pair {
+    display: flex;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  .edu-pair .edu-card {
+    flex: 1;
+  }
+
+  .edu-pair .edu-card.edu-popout {
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s;
+    transform: translateX(0);
+  }
+
+  .edu-pair:hover .edu-card.edu-popout {
+    transform: translateX(12px) translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    border-color: var(--accent);
   }
 
   .edu-card {
@@ -818,6 +839,8 @@
     .race-columns { grid-template-columns: 1fr; }
     .awards-grid { grid-template-columns: 1fr; }
     .education-grid { grid-template-columns: 1fr; }
+    .edu-pair { flex-direction: column; }
+    .edu-pair:hover .edu-card.edu-popout { transform: translateY(-4px); }
     .ventures-grid { grid-template-columns: 1fr; }
     .community-items { grid-template-columns: 1fr; }
     .manifesto-card { padding: 2rem; }
@@ -847,7 +870,7 @@
   <div class="hero-content">
     <div class="hero-eyebrow">Strategy · Endurance · Purpose</div>
     <h1>Zachary <em>Dicken</em></h1>
-    <p class="hero-sub">Executive. Ultramarathoner. Entrepreneur. Dad.<br>Playing the infinite game — on my own terms.</p>
+    <p class="hero-sub">Executive. Ultramarathoner. Entrepreneur. Dad. High-agency operator.<br>Playing the infinite game — on my own terms.</p>
     <div class="hero-worlds">
       <a href="#professional" class="world-pill">Professional</a>
       <a href="#ventures" class="world-pill">Wash Park Ventures</a>
@@ -926,8 +949,8 @@
 
     <div class="bio-grid reveal">
       <div class="bio-text">
-        <p>I'm an executive focused on strategy and business development, with 15+ years leading revenue growth and operational efficiency across the sports and tech industries. I'm motivated by solving problems, building strong teams, and driving strategic decisions that move business forward.</p>
-        <p>My career has given me opportunities to lead large cross-functional teams in both mid-sized companies and Fortune 500 environments, navigating dynamic, high-stakes situations while creating clarity and setting culture and pace.</p>
+        <p>I'm a high-agency operator — an executive focused on strategy and business development, with 15+ years leading revenue growth and operational efficiency across the sports and tech industries. I'm motivated by solving problems, building strong teams, and driving strategic decisions that move business forward.</p>
+        <p>My career has given me opportunities to lead large, dynamic cross-functional teams in both mid-sized companies and Fortune 500 environments. I navigate high-stakes situations while creating clarity, setting culture and pace, and driving results at scale.</p>
         <p>Outside of work, I'm an ultrarunner and entrepreneur, drawn to setting big goals and learning from the pursuit. I'm focused on evolving as a person and leader and showing up consistently as a dad, husband, and friend.</p>
       </div>
       <div class="bio-stats">
@@ -969,11 +992,12 @@
         <div class="timeline-date">2023 — Present</div>
         <div class="timeline-role">Vice President, Partner Services, Operations & Supply Strategy</div>
         <div class="timeline-company">Ticketmaster · Live Nation Entertainment</div>
-        <div class="timeline-desc">Leading seven groups and ~75 team members. Supply strategy represents ~50% of overall resale GTV and ~70% of all marketplace inventory annually. Record quarterly performance across all major metrics in 2024. Helped scale the 3PE business from zero to a $1B+ sales vertical. Key role in developing "Sell Instantly" — ~$200M in ticket sales with 150% YoY growth.</div>
+        <div class="timeline-desc">Leading the Resale Supply Chain — a large, dynamic performance-based team comprised of several groups working together to drive resale forward at scale. Focus: grow and optimize supply; build and enhance tools & services; remove friction across the ecosystem; foster trusted partnerships; drive operational excellence; power cross-functional initiatives; champion transparent, compliant communication and policies.</div>
+        <div class="timeline-desc" style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--text-muted);">Spanning Tooling (Sales, Programs), Operations (BOS, 3PE, Client, Events), Support (APIs, Tooling, Open Ticketing, Salesforce), Partner Services (BizDev & Relationship Strategy), and Communications (Partner Program, Global). Supply strategy represents ~50% of resale GTV and ~70% of marketplace inventory. Record performance across major metrics. Scaled 3PE from zero to an XXX+ vertical. Key role in "Sell Instantly" — XXX in ticket sales, 150% YoY growth.</div>
         <div class="timeline-badges">
           <span class="badge">Supply Record '19, '22, '23, '24</span>
-          <span class="badge">$1B+ Vertical</span>
-          <span class="badge">$200M Fan Program</span>
+          <span class="badge">XXX+ Vertical</span>
+          <span class="badge">XXX Fan Program</span>
         </div>
       </div>
 
@@ -981,14 +1005,14 @@
         <div class="timeline-date">2021 — 2023</div>
         <div class="timeline-role">Senior Director, Partner Services & Supply Strategy</div>
         <div class="timeline-company">Ticketmaster</div>
-        <div class="timeline-desc">Navigated the resale supply vertical through COVID and back to scale. ~40M barcodes and $2.6B GTV — 2x revenue vs. pre-COVID levels. Grew the Partner Program to 1,500+ sellers. Launched Open Ticketing Resale Validation for MLB.</div>
+        <div class="timeline-desc">Navigated the resale supply vertical through COVID and back to scale. XXX barcodes and XXX GTV — 2x revenue vs. pre-COVID levels. Grew the Partner Program to 1,500+ sellers. Launched Open Ticketing Resale Validation for MLB.</div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-date">2019 — 2021</div>
         <div class="timeline-role">Director of Supply Strategy</div>
         <div class="timeline-company">Ticketmaster</div>
-        <div class="timeline-desc">Joined as IC, quickly became thought leader. Managed top 100 resellers. Saved $30M by revising clawback processes during COVID and recovered ~$115M in sales collections. Pioneered 15 pivotal NFL deals capturing over half of Ticketmaster's NFL supply.</div>
+        <div class="timeline-desc">Joined as IC, quickly became thought leader. Managed top 100 resellers. Saved XXX by revising clawback processes during COVID and recovered XXX in sales collections. Pioneered 15 pivotal NFL deals capturing over half of Ticketmaster's NFL supply.</div>
       </div>
 
       <div class="timeline-item">
@@ -1027,17 +1051,19 @@
         <div class="edu-school">Northwestern — Kellogg</div>
         <div class="edu-detail">Executive Education in Competitive Strategy & Business</div>
       </div>
-      <div class="edu-card">
-        <div class="edu-year">2010</div>
-        <div class="edu-school">University of Illinois</div>
-        <div class="edu-detail">BS in Recreation, Sport & Tourism — Sport Management</div>
-        <div class="edu-honor">Highest Honors · Tau Sigma Honor Society</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-year">2008</div>
-        <div class="edu-school">Lincoln Land CC</div>
-        <div class="edu-detail">AS in Business Administration</div>
-        <div class="edu-honor">NJCAA Soccer Player</div>
+      <div class="edu-pair">
+        <div class="edu-card">
+          <div class="edu-year">2010</div>
+          <div class="edu-school">University of Illinois</div>
+          <div class="edu-detail">BS in Recreation, Sport & Tourism — Sport Management</div>
+          <div class="edu-honor">Highest Honors · Tau Sigma Honor Society</div>
+        </div>
+        <div class="edu-card edu-popout">
+          <div class="edu-year">2008</div>
+          <div class="edu-school">Lincoln Land CC</div>
+          <div class="edu-detail">AS in Business Administration</div>
+          <div class="edu-honor">NJCAA Soccer Player</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1064,6 +1090,8 @@
       </div>
       <div class="award-group">
         <h3>Individual</h3>
+        <div class="award-item"><span class="award-name">1st Overall Male — Shawnee Hills 100K (Course Record)</span><span class="award-year">2025</span></div>
+        <div class="award-item"><span class="award-name">1st Overall Male — Cry Me A River 50K</span><span class="award-year">2025</span></div>
         <div class="award-item"><span class="award-name">1st Overall Male — Shawnee Hills 50K</span><span class="award-year">2024</span></div>
         <div class="award-item"><span class="award-name">MLS Ticketing Exec of the Year Finalist</span><span class="award-year">2017</span></div>
         <div class="award-item"><span class="award-name">MLS All-Sales Team — Season Tickets</span><span class="award-year">2012</span></div>
@@ -1135,12 +1163,30 @@
 
         <div class="race-entry">
           <div>
+            <div class="race-name">Cry Me A River — 50K</div>
+            <div class="race-location">Grafton, IL</div>
+            <div class="race-highlight">1st Place Overall Male</div>
+          </div>
+          <div class="race-meta"><div class="race-year">2025</div></div>
+        </div>
+
+        <div class="race-entry">
+          <div>
+            <div class="race-name">Cry Me A River — 50K</div>
+            <div class="race-location">Grafton, IL</div>
+          </div>
+          <div class="race-meta"><div class="race-year">2024</div></div>
+        </div>
+
+        <div class="race-entry">
+          <div>
             <div class="race-name">Shawnee Hills Trail Races — 100K</div>
             <div class="race-location">Ozark, IL</div>
+            <div class="race-highlight">1st Overall · New Course Record</div>
           </div>
           <div class="race-meta">
             <div class="race-time">12:40:56</div>
-            <div class="race-year">2026</div>
+            <div class="race-year">2025</div>
           </div>
         </div>
 
